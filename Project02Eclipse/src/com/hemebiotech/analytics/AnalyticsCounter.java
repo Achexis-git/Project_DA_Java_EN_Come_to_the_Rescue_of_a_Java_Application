@@ -8,20 +8,27 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.TreeMap;
+import java.util.List;
 
 public class AnalyticsCounter {
-	/*
-	private static int headacheCount = 0; // initialize to 0
-	private static int rashCount = 0; // initialize to 0
-	private static int pupilCount = 0; // initialize to 0
-	*/
 	
 	public static void main(String args[]) throws Exception {
+		/*
 		Map<String, Integer> compteSymptomes = new HashMap<String, Integer>();
 		readFile(compteSymptomes);
 		
 		writeResult(compteSymptomes);
-
+		*/
+		
+		ReadSymptomDataFromFile reader = new ReadSymptomDataFromFile("Project02Eclipse/symptoms.txt");
+		List<String> symptoms = reader.GetSymptoms();
+		
+		WriteResultsInFile writer = new WriteResultsInFile("Project02Eclipse/result.out", symptoms);
+		
+		writer.writeFile();
+		
+		System.out.println("end");
+		
 		/*
 		// first get input
 		BufferedReader reader = new BufferedReader(new FileReader("Project02Eclipse/symptoms.txt"));
