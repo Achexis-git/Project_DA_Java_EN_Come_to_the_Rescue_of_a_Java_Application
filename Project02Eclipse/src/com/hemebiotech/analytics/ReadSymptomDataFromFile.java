@@ -41,7 +41,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 			}
 		}
 		
-		return result; // Liste des symptomes
+		return result; // List of symptoms
 	}
 
 }
