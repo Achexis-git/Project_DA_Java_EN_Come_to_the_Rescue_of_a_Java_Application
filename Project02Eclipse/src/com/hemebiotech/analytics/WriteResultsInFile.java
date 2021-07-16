@@ -102,8 +102,7 @@ public class WriteResultsInFile implements ISymptomWriter {
 	 */
 	private void writeFile(Map<String, Integer> dictSymptoms) {
 		if (filepath != null) {
-			try {
-				FileWriter writer = new FileWriter(filepath);
+			try (FileWriter writer = new FileWriter(filepath)){
 
 				String key;
 				Integer value;
@@ -116,7 +115,6 @@ public class WriteResultsInFile implements ISymptomWriter {
 					value = entry.getValue();
 					writer.write(key + ": " + value + "\n");
 				}
-				writer.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
