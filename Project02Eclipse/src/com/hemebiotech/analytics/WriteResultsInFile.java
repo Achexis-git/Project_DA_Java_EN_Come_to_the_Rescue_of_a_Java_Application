@@ -49,19 +49,7 @@ public class WriteResultsInFile implements ISymptomWriter {
 		// Maybe create the dictionary directly in the constructor ?
 	}
 
-	/**
-	 * Take the list of symptoms, count them, and write the result in a file.
-	 * <ul>
-	 * <li>First method used count the symptoms</li>
-	 * <li>Second method write the result in a file</li>
-	 * </ul>
-	 * 
-	 * @see WriteResultsInFile#symptoms
-	 * @see WriteResultsInFile#filepath
-	 * 
-	 * @see WriteResultsInFile#writeDictionnary()
-	 * @see WriteResultsInFile#writeFile(Map)
-	 */
+	@Override
 	public void countSymptomsAndWriteFile() {
 		// Counts the symptoms
 		Map<String, Integer> dictSymptoms = writeDictionnary();
@@ -87,12 +75,12 @@ public class WriteResultsInFile implements ISymptomWriter {
 		// Browse the list of symptoms
 		for (int i = 0; i < symptoms.size(); i++) {
 			symptom = symptoms.get(i);
-			
+
 			// If the symptom is already in dictSymptoms
 			if (dictSymptoms.containsKey(symptom)) {
 				// Add 1 to the corresponding value
 				dictSymptoms.put(symptom, dictSymptoms.get(symptom) + 1);
-			} else { 
+			} else {
 				// Add the new symptom as key and set the value to 1
 				dictSymptoms.put(symptom, 1);
 			}
@@ -122,6 +110,8 @@ public class WriteResultsInFile implements ISymptomWriter {
 
 				// Browse dictSymptoms
 				for (Map.Entry<String, Integer> entry : dictSymptoms.entrySet()) {
+					// For each dictionnary entry, we get the key and the value and write them down
+					// on the file
 					key = entry.getKey();
 					value = entry.getValue();
 					writer.write(key + ": " + value + "\n");
