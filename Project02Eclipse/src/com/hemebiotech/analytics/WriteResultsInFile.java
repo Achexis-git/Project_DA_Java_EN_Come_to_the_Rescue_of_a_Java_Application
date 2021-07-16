@@ -14,7 +14,7 @@ import java.io.IOException;
  *
  */
 
-public class WriteResultsInFile {
+public class WriteResultsInFile implements ISymptomWriter {
 	/**
 	 * filepath to saves the symptoms
 	 * 
