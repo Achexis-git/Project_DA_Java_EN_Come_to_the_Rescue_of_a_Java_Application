@@ -68,12 +68,9 @@ public class WriteResultsInFile implements ISymptomWriter {
 	private Map<String, Integer> createDictOfSymptoms() {
 		// Map containing the symptom as key and the number of occurrences as value
 		Map<String, Integer> dictSymptoms = new TreeMap<String, Integer>();
-		String symptom = "";
 
 		// Browses the list of symptoms
-		for (int i = 0; i < symptoms.size(); i++) {
-			symptom = symptoms.get(i);
-
+		for (String symptom : symptoms) {
 			// If the symptom is already in dictSymptoms
 			if (dictSymptoms.containsKey(symptom)) {
 				// Adds 1 to the corresponding value
