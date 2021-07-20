@@ -13,10 +13,10 @@ import java.util.Map;
 public interface ISymptomWriter {
 	
 	/**
-	 * Take the list of symptoms, count them, and write the result in a file.
+	 * Takes the list of symptoms, counts them, and writes the result in a file.
 	 * <ul>
-	 * <li>First method used count the symptoms</li>
-	 * <li>Second method write the result in a file</li>
+	 * <li>First method used counts the symptoms</li>
+	 * <li>Second method writes the result in a file</li>
 	 * </ul>
 	 * 
 	 * @see WriteResultsInFile#symptoms

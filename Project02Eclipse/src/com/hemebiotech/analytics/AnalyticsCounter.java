@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * Main class
+ * Reads "symptoms.txt", count the symptoms and write the result in "result.out"
  * 
  * @version 2.0
  * @author Alexis Rouvroy
@@ -12,10 +13,10 @@ import java.util.List;
 public class AnalyticsCounter {
 
 	/**
-	 * Main method that create and use two objects :
+	 * Main method that creates and uses two objects :
 	 * <ul>
-	 * <li>First class read the symptoms file and create a list of Strings</li>
-	 * <li>Second class count the occurrences and write the result on a file</li>
+	 * <li>First class reads the symptoms file and creates a list of Strings</li>
+	 * <li>Second class counts the occurrences and writes the result in a file</li>
 	 * </ul>
 	 * 
 	 * @param args

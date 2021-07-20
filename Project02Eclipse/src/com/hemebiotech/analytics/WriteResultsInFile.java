@@ -7,7 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * <h1>Count symptoms and write them in a file</h1>
+ * <h1>Counts symptoms and write them in a file</h1>
  * 
  * @version 1.0
  * @author Alexis Rouvroy
@@ -16,7 +16,7 @@ import java.io.IOException;
 
 public class WriteResultsInFile implements ISymptomWriter {
 	/**
-	 * filepath to saves the symptoms
+	 * filepath to save the symptoms
 	 * 
 	 * @see WriteResultsInFile#writeFile(Map)
 	 */
@@ -45,20 +45,18 @@ public class WriteResultsInFile implements ISymptomWriter {
 	public WriteResultsInFile(String filepath, List<String> symptoms) {
 		this.filepath = filepath;
 		this.symptoms = symptoms;
-
-		// Maybe create the dictionary directly in the constructor ?
 	}
 
 	@Override
 	public void countSymptomsAndWriteFile() {
 		// Counts the symptoms
-		Map<String, Integer> dictSymptoms = writeDictionnary();
+		Map<String, Integer> dictSymptoms = createDictOfSymptoms();
 		// Saves the result
 		writeFile(dictSymptoms);
 	}
 
 	/**
-	 * Create a sorted dictionary
+	 * Creates a sorted dictionary
 	 * <p>
 	 * Each key is a symptom and the value associated is the number of occurrences
 	 * of this symptom in the attribute "symptoms"
@@ -67,21 +65,21 @@ public class WriteResultsInFile implements ISymptomWriter {
 	 * @see WriteResultsInFile#symptoms
 	 * @return The dictionary
 	 */
-	private Map<String, Integer> writeDictionnary() {
+	private Map<String, Integer> createDictOfSymptoms() {
 		// Map containing the symptom as key and the number of occurrences as value
 		Map<String, Integer> dictSymptoms = new TreeMap<String, Integer>();
 		String symptom = "";
 
-		// Browse the list of symptoms
+		// Browses the list of symptoms
 		for (int i = 0; i < symptoms.size(); i++) {
 			symptom = symptoms.get(i);
 
 			// If the symptom is already in dictSymptoms
 			if (dictSymptoms.containsKey(symptom)) {
-				// Add 1 to the corresponding value
+				// Adds 1 to the corresponding value
 				dictSymptoms.put(symptom, dictSymptoms.get(symptom) + 1);
 			} else {
-				// Add the new symptom as key and set the value to 1
+				// Adds the new symptom as key and set the value to 1
 				dictSymptoms.put(symptom, 1);
 			}
 		}
@@ -90,9 +88,9 @@ public class WriteResultsInFile implements ISymptomWriter {
 	}
 
 	/**
-	 * Save the content of the dictionary
+	 * Saves the content of the dictionary
 	 * <p>
-	 * Write the content of the parameter in a file situated with the attribute
+	 * Writes the content of the parameter in a file situated with the attribute
 	 * "filepath"
 	 * 
 	 * @see WriteResultsInFile#filepath
@@ -107,7 +105,7 @@ public class WriteResultsInFile implements ISymptomWriter {
 				String key;
 				Integer value;
 
-				// Browse dictSymptoms
+				// Browses dictSymptoms
 				for (Map.Entry<String, Integer> entry : dictSymptoms.entrySet()) {
 					// For each dictionnary entry, we get the key and the value and write them down
 					// on the file
