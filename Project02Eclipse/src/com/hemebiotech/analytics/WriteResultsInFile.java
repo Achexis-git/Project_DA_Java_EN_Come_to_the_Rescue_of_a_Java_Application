@@ -25,7 +25,7 @@ public class WriteResultsInFile implements ISymptomWriter {
 	/**
 	 * List of symptoms
 	 * 
-	 * @see WriteResultsInFile#writeDictionnary()
+	 * @see WriteResultsInFile#createDictOfSymptoms()
 	 */
 	private List<String> symptoms;
 

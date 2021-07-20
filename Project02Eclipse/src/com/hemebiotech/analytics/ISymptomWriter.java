@@ -22,7 +22,7 @@ public interface ISymptomWriter {
 	 * @see WriteResultsInFile#symptoms
 	 * @see WriteResultsInFile#filepath
 	 * 
-	 * @see WriteResultsInFile#writeDictionnary()
+	 * @see WriteResultsInFile#createDictOfSymptoms()
 	 * @see WriteResultsInFile#writeFile(Map)
 	 */
 	void countSymptomsAndWriteFile();

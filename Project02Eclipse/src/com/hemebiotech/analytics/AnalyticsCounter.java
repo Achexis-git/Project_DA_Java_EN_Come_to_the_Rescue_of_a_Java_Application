@@ -19,8 +19,8 @@ public class AnalyticsCounter {
 	 * <li>Second class counts the occurrences and writes the result in a file</li>
 	 * </ul>
 	 * 
-	 * @param args
-	 * @throws Exception
+	 * @param args Input arguments (not used)
+	 * @throws Exception Open files
 	 */
 	public static void main(String args[]) throws Exception {
 		ISymptomReader reader = new ReadSymptomDataFromFile("Project02Eclipse/symptoms.txt");
