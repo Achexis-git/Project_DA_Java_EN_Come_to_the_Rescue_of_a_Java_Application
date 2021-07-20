@@ -23,10 +23,10 @@ public class AnalyticsCounter {
 	 * @throws Exception
 	 */
 	public static void main(String args[]) throws Exception {
-		ReadSymptomDataFromFile reader = new ReadSymptomDataFromFile("Project02Eclipse/symptoms.txt");
+		ISymptomReader reader = new ReadSymptomDataFromFile("Project02Eclipse/symptoms.txt");
 		List<String> symptoms = reader.GetSymptoms();
 
-		WriteResultsInFile writer = new WriteResultsInFile("Project02Eclipse/result.out", symptoms);
+		ISymptomWriter writer = new WriteResultsInFile("Project02Eclipse/result.out", symptoms);
 
 		writer.countSymptomsAndWriteFile();
 
